@@ -4,7 +4,7 @@ WORKDIR /src
 COPY . .
 RUN go build -o /usr/bin/retrodep
 
-FROM registry.access.redhat.com/ubi9-minimal@sha256:7c5495d5fad59aaee12abc3cbbd2b283818ee1e814b00dbc7f25bf2d14fa4f0c
+FROM registry.access.redhat.com/ubi9-minimal@sha256:53ea1f6d835898acda5becdb3f8b1292038a480384bbcf994fc0bcf1f7e8eaf7
 
 COPY --from=go-builder /usr/bin/retrodep /usr/bin/retrodep
 
