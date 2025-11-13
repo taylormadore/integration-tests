@@ -1,0 +1,53 @@
+kind: PipelineRun
+apiVersion: tekton.dev/v1beta1
+metadata:
+  name: test-integration-tests
+spec:
+  taskRunSpecs:
+  - pipelineTaskName: test-integration-tests
+    stepSpecs:
+      - name: run-tests
+        computeResources:
+          requests:
+            cpu: 2
+            memory: 1Gi
+          limits:
+            cpu: 2
+            memory: 1Gi
+  pipelineSpec:
+    params:
+      - description: 'Snapshot of the application'
+        name: SNAPSHOT
+        type: string
+    tasks:
+      - name: test-integration-tests
+        params:
+          # This param is automatically set by Konflux when the pipeline is executed
+          # https://konflux.pages.redhat.com/docs/users/testing/integration/creating.html#data-injected-into-the-pipelinerun-of-the-integration-test
+          - name: SNAPSHOT
+            value: "$(params.SNAPSHOT)"
+        taskSpec:
+          volumes:
+          - name: test
+            emptyDir: {}
+          steps:
+            - name: test
+              image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:e70eb2be867f1236b19f5cbfeb8e0625737ce0ec1369e32a4f9f146aaaf68d49
+              env:
+                - name: PARAM_SNAPSHOT
+                  value: "$(params.SNAPSHOT)"
+              script: |
+                #!/bin/bash
+                set -eo pipefail
+                pwd
+                whoami
+                cat <<EOF > /opt/test/test.yaml
+                This is a test
+                EOF
+                cat <<EOF > test2.yaml
+                This is a test
+                EOF
+              volumeMounts:
+              - name: test
+                mountPath: /opt/test
+
