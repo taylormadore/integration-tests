@@ -22,8 +22,6 @@ spec:
     tasks:
       - name: test-integration-tests
         params:
-          # This param is automatically set by Konflux when the pipeline is executed
-          # https://konflux.pages.redhat.com/docs/users/testing/integration/creating.html#data-injected-into-the-pipelinerun-of-the-integration-test
           - name: SNAPSHOT
             value: "$(params.SNAPSHOT)"
         taskSpec:
