@@ -1,4 +1,4 @@
-FROM docker.io/library/golang@sha256:2c5f7a0c252a17cf6aa30ddee15caa0f485ee29410a6ea64cddb62eea2b07bdf AS go-builder
+FROM docker.io/library/golang@sha256:e68f6a00e88586577fafa4d9cefad1349c2be70d21244321321c407474ff9bf2 AS go-builder
 
 WORKDIR /src
 COPY . .
