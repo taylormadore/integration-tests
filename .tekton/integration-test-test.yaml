@@ -9,10 +9,10 @@ spec:
       - name: run-tests
         computeResources:
           requests:
-            cpu: 2
+            cpu: 1
             memory: 1Gi
           limits:
-            cpu: 2
+            cpu: 1
             memory: 1Gi
   pipelineSpec:
     params:
