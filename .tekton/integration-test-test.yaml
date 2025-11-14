@@ -15,26 +15,63 @@ spec:
             value: "$(params.SNAPSHOT)"
         taskSpec:
           volumes:
-          - name: test
+          - name: host-info
             emptyDir: {}
           steps:
-            - name: test
-              image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:e70eb2be867f1236b19f5cbfeb8e0625737ce0ec1369e32a4f9f146aaaf68d49
+            - name: provisioner
+              image: quay.io/redhat-developer/mapt:v0.9.9
               env:
                 - name: PARAM_SNAPSHOT
                   value: "$(params.SNAPSHOT)"
               script: |
                 #!/bin/bash
                 set -eo pipefail
+                echo "=== Step 1: Provisioner ==="
                 pwd
-                whoami
-                cat <<EOF > /opt/test/test.yaml
-                This is a test
-                EOF
-                cat <<EOF > test2.yaml
-                This is a test
-                EOF
+                whoami || echo "whoami failed, user ID: $(id -u)"
+                id
+                ls -la $(pwd)
+                echo ""
+                echo "Writing host info files..."
+                echo "192.168.1.100" > /opt/host-info/host
+                echo "ec2-user" > /opt/host-info/username
+                echo "fake-ssh-key" > /opt/host-info/id_rsa
+                echo "Provisioner step complete"
               volumeMounts:
-              - name: test
-                mountPath: /opt/test
+              - name: host-info
+                mountPath: /opt/host-info
+            - name: host-info-secret
+              image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:e70eb2be867f1236b19f5cbfeb8e0625737ce0ec1369e32a4f9f146aaaf68d49
+              env:
+                - name: NAMESPACE
+                  value: $(context.taskRun.namespace)
+              script: |
+                #!/bin/bash
+                set -eo pipefail
+                echo "=== Step 2: Host Info Secret ==="
+                pwd
+                whoami || echo "whoami failed, user ID: $(id -u)"
+                id
+                ls -la $(pwd)
+                echo ""
+                echo "Attempting to write host-info.yaml to current directory..."
+                cat <<EOF > host-info.yaml
+                apiVersion: v1
+                kind: Secret
+                metadata:
+                  name: test-host-info
+                  namespace: $NAMESPACE
+                type: Opaque
+                data:
+                  host: $(cat /opt/host-info/host | base64 -w0)
+                  username: $(cat /opt/host-info/username | base64 -w0)
+                  id_rsa: $(cat /opt/host-info/id_rsa | base64 -w0)
+                EOF
+                echo "Successfully created host-info.yaml!"
+                echo ""
+                echo "Contents of host-info.yaml:"
+                cat host-info.yaml
+              volumeMounts:
+              - name: host-info
+                mountPath: /opt/host-info
 
