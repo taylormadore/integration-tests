@@ -3,17 +3,6 @@ apiVersion: tekton.dev/v1beta1
 metadata:
   name: test-integration-tests
 spec:
-  taskRunSpecs:
-  - pipelineTaskName: test-integration-tests
-    stepSpecs:
-      - name: run-tests
-        computeResources:
-          requests:
-            cpu: 1
-            memory: 1Gi
-          limits:
-            cpu: 1
-            memory: 1Gi
   pipelineSpec:
     params:
       - description: 'Snapshot of the application'
@@ -22,8 +11,6 @@ spec:
     tasks:
       - name: test-integration-tests
         params:
-          # This param is automatically set by Konflux when the pipeline is executed
-          # https://konflux.pages.redhat.com/docs/users/testing/integration/creating.html#data-injected-into-the-pipelinerun-of-the-integration-test
           - name: SNAPSHOT
             value: "$(params.SNAPSHOT)"
         taskSpec:
