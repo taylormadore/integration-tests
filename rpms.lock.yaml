@@ -4,7 +4,7 @@ lockfileVendor: redhat
 arches:
 - arch: x86_64
   packages:
-  - url: https://127.0.0.1:8443/pkg/redhat-release-9.4-0.5.el9.x86_64.rpm
+  - url: https://127.0.0.1:8444/repository/yum-proxy/x86_64/baseos/os/Packages/r/redhat-release-9.4-0.5.el9.x86_64.rpm
     repoid: test-repo
     size: 47059
     checksum: sha256:6fd4c0937fb4ec4b4c487fbd915af35bdba1133255f5e7c2e13b6c320086ea53
