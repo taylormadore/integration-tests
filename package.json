@@ -1,0 +1,16 @@
+{
+  "name": "integration-tests",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800",
+  "dependencies": {
+    "@hono/hono": "jsr:^4.12.23",
+    "@sinclair/typebox": "^0.34.49",
+    "debug": "github:debug-js/debug",
+    "lodash": "file:lodash-4.18.1.tar.gz",
+    "semver": "https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz",
+    "zod": "^4.4.3"
+  }
+}
