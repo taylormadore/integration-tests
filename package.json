@@ -12,5 +12,12 @@
     "lodash": "file:lodash-4.18.1.tar.gz",
     "semver": "https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz",
     "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@hono/zod-validator": "jsr:^0.8.0",
+    "uuid": "^14.0.0"
+  },
+  "optionalDependencies": {
+    "picocolors": "^1.1.1"
   }
 }
