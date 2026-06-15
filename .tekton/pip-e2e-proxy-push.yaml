@@ -25,6 +25,10 @@ spec:
     value: quay.io/redhat-user-workloads-stage/tmadore-tenant/pip-e2e-proxy:{{revision}}
   - name: dockerfile
     value: Dockerfile
+  - name: hermetic
+    value: 'true'
+  - name: prefetch-input
+    value: 'pip'
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
