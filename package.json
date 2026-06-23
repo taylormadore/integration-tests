@@ -4,7 +4,7 @@
   "type": "module",
   "main": "index.js",
   "license": "ISC",
-  "packageManager": "pnpm@10.34.3",
+  "packageManager": "pnpm@10.34.4",
   "dependencies": {
     "@hono/hono": "jsr:^4.12.23",
     "@sinclair/typebox": "^0.34.49",
