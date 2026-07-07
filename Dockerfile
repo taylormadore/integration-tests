@@ -6,6 +6,6 @@ RUN if curl -IsS www.google.com; then echo "Has network access!"; exit 1; fi
 WORKDIR /opt/test_package_cachi2
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -r requirements.hashes.wheel.txt
 
 CMD ["python", "/opt/test_package_cachi2/src/test_package_cachi2/main.py"]
