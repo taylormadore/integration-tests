@@ -18,7 +18,7 @@ importers:
         version: '@jsr/hono__hono@4.12.23'
       '@sinclair/typebox':
         specifier: ^0.34.49
-        version: 0.34.49
+        version: 0.34.52
       debug:
         specifier: github:debug-js/debug
         version: https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621
@@ -57,8 +57,8 @@ packages:
   '@jsr/hono__zod-validator@0.8.0':
     resolution: {integrity: sha512-N83lxbjgUEgekCWUBXTNuFrRrXSTeqZsHesArsHsPgtfM4mk4xLOkOHCuS6AH4k9W+tGUq/488QY43xhmFivJA==, tarball: https://npm.jsr.io/~/11/@jsr/hono__zod-validator/0.8.0.tgz}
 
-  '@sinclair/typebox@0.34.49':
-    resolution: {integrity: sha512-brySQQs7Jtn0joV8Xh9ZV/hZb9Ozb0pmazDIASBkYKCjXrXU3mpcFahmK/z4YDhGkQvP9mWJbVyahdtU5wQA+A==}
+  '@sinclair/typebox@0.34.52':
+    resolution: {integrity: sha512-XiMQh7qqVlxZzcVD+kkGMNGMzcTrDMLWI7S4x7z1MkCkbDPrekpZXEUK0eZqZFMuHQg2a2DZOcDIh9o5v3Gonw==}
 
   debug@https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621:
     resolution: {gitHosted: true, integrity: sha512-woSfHOvCYarlVlvhFTArFwhefwTPUEHJKnC+6MLnsNCSSgklXUtxQ633LKbqLo2+nISTSHg2UP+vPVkdnp6RZA==, tarball: https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621}
@@ -106,7 +106,7 @@ snapshots:
       '@jsr/hono__hono': 4.12.23
       zod: 4.4.3(patch_hash=d591421aa525062c8ea1d45ca2c3443c85b3fc17c497a1004d48f2747a053685)
 
-  '@sinclair/typebox@0.34.49': {}
+  '@sinclair/typebox@0.34.52': {}
 
   debug@https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621:
     dependencies:
