@@ -25,7 +25,7 @@ utils = { version = "0.1.0", path = "packages/utils" }
 clap = { version = "4.0", features = ["derive"] }
 
 # crates.io dependency that will be patched (see patch.crates-io)
-heck = "0.4.1"
+heck = "0.5.0"
 
 # crates.io dependency that is not pinned
 indicatif = "~0.17"
