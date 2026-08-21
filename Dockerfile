@@ -1,4 +1,4 @@
-FROM docker.io/rust:1.75 as builder
+FROM docker.io/rust:1.98 as builder
 
 COPY . /source
 
