@@ -37,7 +37,7 @@ importers:
         version: '@jsr/hono__zod-validator@0.8.0'
       uuid:
         specifier: ^14.0.0
-        version: 14.0.0
+        version: 14.0.2
     optionalDependencies:
       picocolors:
         specifier: ^1.1.1
@@ -61,7 +61,7 @@ packages:
     resolution: {integrity: sha512-brySQQs7Jtn0joV8Xh9ZV/hZb9Ozb0pmazDIASBkYKCjXrXU3mpcFahmK/z4YDhGkQvP9mWJbVyahdtU5wQA+A==}
 
   debug@https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621:
-    resolution: {gitHosted: true, integrity: sha512-woSfHOvCYarlVlvhFTArFwhefwTPUEHJKnC+6MLnsNCSSgklXUtxQ633LKbqLo2+nISTSHg2UP+vPVkdnp6RZA==, tarball: https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621}
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/debug-js/debug/tar.gz/f405ade8a4b7a0dc353e0f7390c1be90060f3621}
     version: 4.4.3
     engines: {node: '>=6.0'}
     peerDependencies:
@@ -85,13 +85,13 @@ packages:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
   semver@https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz:
-    resolution: {integrity: sha512-+T5wTYyd2XpsnpJyQYEQhC/FfOzhFt3xT3H+3xi7yCMzizkLM+TiJP3+7xBPCTVn+t6YWkURYM5q2AUCcUiwjA==, tarball: https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz}
+    resolution: {tarball: https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz}
     version: 7.8.1
     engines: {node: '>=10'}
     hasBin: true
 
-  uuid@14.0.0:
-    resolution: {integrity: sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==}
+  uuid@14.0.2:
+    resolution: {integrity: sha512-xZe/16rV4aa+HGSOCiY2YeLT1OybRLrrkL/Rqaq7p7GMVXjFh+6wN4oMYgjFmnSnhY8t6Xpdl2l9qmnHYuMHwQ==}
     hasBin: true
 
   zod@4.4.3:
@@ -123,6 +123,6 @@ snapshots:
 
   semver@https://github.com/npm/node-semver/archive/refs/tags/v7.8.1.tar.gz: {}
 
-  uuid@14.0.0: {}
+  uuid@14.0.2: {}
 
   zod@4.4.3(patch_hash=d591421aa525062c8ea1d45ca2c3443c85b3fc17c497a1004d48f2747a053685): {}
