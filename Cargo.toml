@@ -37,7 +37,7 @@ rand = { git = "https://github.com/rust-random/rand", rev = "8792268dfe57e49bb45
 textwrap = "0.15.2"
 
 [build-dependencies]
-adler = "0.2.3"
+adler = "1.0.0"
 
 [patch.crates-io]
 heck = { path = "./heck" }
